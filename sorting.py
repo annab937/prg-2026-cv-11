@@ -3,7 +3,7 @@ import random
 def random_numbers(count, low=0, high=100):
     return [random.randint(low, high) for _ in range(count)]
 
-
+#Selection Sort
 def selection_sort(sequence):
     sequence = sequence[:]
 
@@ -18,10 +18,22 @@ def selection_sort(sequence):
 
     return sequence
 
+#Bubble Sort
+def bubble_sort(sequence):
+    sequence = sequence[:]
+    n = len(sequence)
+
+    for i in range(n - 1):
+        for j in range(n - 1 - i):
+            if sequence[j] > sequence[j + 1]:
+                sequence[j], sequence[j + 1] = sequence[j + 1], sequence[j]
+
+    return sequence
+
 
 def main():
     sequence = random_numbers(20, low=0, high=100)
-    sorted_sequence = selection_sort(sequence)
+    sorted_sequence = bubble_sort(sequence)
     print(sequence)
     print(sorted_sequence)
 
