@@ -1,3 +1,6 @@
+from sorting import random_numbers
+
+
 class StudentsGrades:
     def __init__(self, scores):
         self.scores = scores
@@ -46,10 +49,20 @@ class StudentsGrades:
 
 
 
-if __name__ == "__main__":
+def main():
     results = StudentsGrades([85, 42, 91, 67, 50, 73, 100, 38, 58])
+    print(f"Pocet studentu: {results.count()}")
+    for student_id in range(results.count()):
+        print(f"Student {student_id}: {results.get_by_index(student_id)} points – {results.get_grades(student_id)}")
+    print(f"Plny pocet bodu meli studenti: {results.find(100)}")
+    print(f"Serazene vysledky: {results.get_sorted()}")
 
-    print(results.get_sorted())
-    print(results.scores)
+    from sorting import random_numbers
+
+    random_results = StudentsGrades(random_numbers(30, 0, 100))
+    print(random_results.count())
+    print(random_results.get_sorted())
 
 
+if __name__ == "__main__":
+    main()
