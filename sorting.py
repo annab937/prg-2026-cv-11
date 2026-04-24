@@ -11,7 +11,7 @@ def selection_sort(sequence):
     n = len(sequence)
     for i in range(n):
         min_index = i
-
+fdgdftgdfg
         for j in range(i + 1, n):
             if sequence[j] < sequence[min_index]:
                 min_index = j
